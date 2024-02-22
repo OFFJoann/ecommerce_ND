@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const ProductoItem = ({ referencia, descripcion, precio, images }) => {
+export const ProductoItem = ({ referencia, descripcion, precio, images, id }) => {
     const addCarrito = () => {
         console.log(`Añadido al carrito: ${referencia}`);
     };
@@ -21,7 +21,7 @@ export const ProductoItem = ({ referencia, descripcion, precio, images }) => {
                     Añadir al carrito
                 </button>
                 <div>
-                    <Link to={`/producto/${referencia}`} className="btn">
+                    <Link to={`/producto/${id}`} className="btn">
                         Vista
                     </Link>
                 </div>

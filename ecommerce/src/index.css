@@ -370,7 +370,7 @@ header .cart span:hover{
   border-radius: 5px;
   justify-content: space-between;
   transition: transform 0.7s ease; 
-  margin: 2px; 
+  margin: -1px; 
 }
 
 .producto:hover {

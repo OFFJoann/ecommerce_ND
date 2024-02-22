@@ -8,8 +8,6 @@ export const Header = () => {
     const [menu, setMenu] = value.menu;
     const [carrito] = value.carrito
 
-    console.log(menu)
-
     const tooglemenu = () =>{
         setMenu(!menu)
     }

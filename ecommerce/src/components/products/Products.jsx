@@ -27,6 +27,7 @@ function Products() {
                         referencia={data.referencia}
                         descripcion={data.descripcion}
                         precio={data.precio}
+                        id={data.row_id}
                     />
                 ))}
             </div>
