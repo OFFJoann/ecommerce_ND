@@ -1,5 +1,5 @@
 
-const API_URL = "http://192.168.7.152:8080";
+/*const API_URL = "http://192.168.7.152:8080";
 
 export const obtenerDatosDesdeAPI = async () => {
     try {
@@ -30,12 +30,13 @@ export const obtenerDatosDesdeAPI = async () => {
         throw error;
     }
 };
+*/
 
 
 
 /* Logica para mostrar los productos incluso si estos no cuentan con imagenes, por favor comentariar la de arriba si se necesita */
 
-/*const API_URL = "http://192.168.7.152:8080";
+const API_URL = "http://192.168.7.152:8080";
 
 export const obtenerDatosDesdeAPI = async () => {
     try {
@@ -64,4 +65,3 @@ export const obtenerDatosDesdeAPI = async () => {
         throw error;
     }
 };
-*/
