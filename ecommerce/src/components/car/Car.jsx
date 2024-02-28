@@ -11,11 +11,25 @@ export const Car = () => {
         setMenu(false);
     };
 
-    useEffect(() => {
+   /* useEffect(() => {
         // Obtiene el carrito almacenado en el localStorage al cargar el componente
         const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
         setCart(storedCart);
-    }, []);
+    }, []); */
+
+    window.addEventListener('cambioCarrito', function () {
+        // Lógica para actualizar la interfaz basada en el contenido del localStorage
+        actualizarInterfaz();
+    });
+    
+    // Función para actualizar la interfaz del carrito
+    function actualizarInterfaz() {
+        // Obtener el carrito desde localStorage
+        const carrito = JSON.parse(localStorage.getItem('cart'));
+    
+        // Lógica para actualizar la interfaz con el contenido del carrito
+        // ...
+    }
 
     const show1 = menu ? "carritos show" : "carritos";
     const show2 = menu ? "carrito show" : "carrito";

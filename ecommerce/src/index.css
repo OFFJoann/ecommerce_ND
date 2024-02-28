@@ -469,6 +469,20 @@ header .cart span:hover{
   color: white;
 }
 
+/*-----------------VISTA-----------------*/
+.vista {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 300ms ease-in-out;
+  background-color: rgba(0, 0, 0, .6);
+  z-index: 250;
+  padding-bottom: 5rem;
+  visibility: hidden;
+  border-radius: 5px 5px 5px 5px;
+}
 /*-----------------FOOTER-----------------*/
 
 .footer{
