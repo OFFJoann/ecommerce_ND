@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const ProductoItem = ({ referencia, descripcion, precio, images, id }) => {
+export const ProductoItem = ({ referencia, descripcion, precio, id, imagen }) => {
     const addCarrito = () => {
         const productInfo = {
             referencia,
             descripcion,
             precio,
-            images,
+            imagen,
             id,
             cantidad: 1,
         };
@@ -34,7 +34,7 @@ export const ProductoItem = ({ referencia, descripcion, precio, images, id }) =>
     return (
         <div className="producto">
             <div className="producto_img">
-                {<img src={"http://speedoco.vteximg.com.br/arquivos/ids/172933/vestido-de-bano-mujer-negro-8n013760000-1.jpg"}  />}
+                {<img src={imagen}/>}
             </div>
             <div className="producto_footer">
                 <h1>{descripcion}</h1>

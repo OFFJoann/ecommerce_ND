@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { obtenerDatosDesdeAPI } from '../../services/api';
+import { obtenerDatosDesdeAPI, obtenerPrimeraImagen } from '../../services/api';
 import { ProductoItem } from './Productoitem';
 
 function Products() {
     const [datos, setDatos] = useState([]);
-    /*const [images, setImages] = useState([]);*/
 
     useEffect(() => {
         const fetchData = async () => {
@@ -14,28 +13,39 @@ function Products() {
             } catch (error) {
                 console.error('Error al obtener datos desde la API:', error);
             }
-           /* try {
-                const { dataImg } = await obtenerDatosDesdeAPI();
-                setImages(dataImg);
-            } catch (error) {
-                console.error('Error al obtener imagenes desde la API:', error);
-            }*/
         };
 
         fetchData();
     }, []);
+
+    const [imagenes, setImagenes] = useState({});
+
+    useEffect(() => {
+        const obtenerImagenes = async () => {
+            const nuevasImagenes = {};
+            for (const producto of datos) {
+                const imgURL = await obtenerPrimeraImagen(producto.referencia);
+                nuevasImagenes[producto.referencia] = imgURL;
+            }
+            setImagenes(nuevasImagenes);
+            console.log(imagenes)
+        };
+
+        obtenerImagenes();
+    }, [datos]);
 
     return (
         <>
             <h1 className="title">PRODUCTOS</h1>
             <div className="productos">
                 {datos.map((producto) => (
-                    
                     <ProductoItem
+                        key={producto.referencia}
                         referencia={producto.referencia}
                         descripcion={producto.descripcion}
                         precio={producto.precio}
-                    /> 
+                        imagen={imagenes[producto.referencia]}
+                    />
                 ))}
             </div>
         </>
